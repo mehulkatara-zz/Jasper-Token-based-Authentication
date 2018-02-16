@@ -44,8 +44,7 @@
         <!-- Works with the plain-text tokens by default -->
         <!-- Substitute with your token decryption implementation of com.jaspersoft.jasperserver.api.common.crypto.CipherI interface -->
         <property name="tokenDecryptor">
-            <!-- <bean class="com.jaspersoft.jasperserver.api.common.crypto.PlainTextNonCipher"/> -->
-			 <bean class="com.jaspersoft.cipher.myCipher"/>
+            <bean class="com.jaspersoft.jasperserver.api.common.crypto.PlainTextNonCipher"/>
 			
         </property>
 
