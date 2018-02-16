@@ -6,10 +6,10 @@ If you have an application or portal you want to use with JasperReports Server, 
 1. Copy below file
 
 
-    (Community Editions)
+    **(For Community Editions Only)**
 
         applicationContext-externalAuth-preAuth.xml
-    (Commercial Editions)
+    **(For Commercial Editions Only)**
     
     rename to 
 
@@ -29,3 +29,5 @@ If you have an application or portal you want to use with JasperReports Server, 
 
         u=obama|exe=201812250001
         <expire time formate yyyyMMddHHmm>
+        
+**Tested under Community Editions Only**        
