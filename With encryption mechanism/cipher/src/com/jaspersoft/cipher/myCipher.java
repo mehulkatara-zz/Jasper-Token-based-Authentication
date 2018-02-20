@@ -30,7 +30,7 @@ public class myCipher implements CipherI{
 	            sha = MessageDigest.getInstance("SHA-1");
 	            key = sha.digest(key);
 	            key = Arrays.copyOf(key, 16);
-	            secretKey = new SecretKeySpec(key, "AES");
+	            secretKey = new SecretKeySpec(key, "RC4");
 	            
 	        }
 	        catch (NoSuchAlgorithmException e) {
@@ -47,7 +47,7 @@ public class myCipher implements CipherI{
 		try {
 			String secret=myKey;
 			setKey(secret);
-			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5PADDING");
+			Cipher cipher = Cipher.getInstance("RC4");
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
 			return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt.getBytes("UTF-8"))));
 			
@@ -65,7 +65,7 @@ public class myCipher implements CipherI{
 		try {
 			String secret=myKey;
 			setKey(secret);
-			Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+			Cipher cipher = Cipher.getInstance("RC4");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 			
 			return Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
@@ -83,13 +83,14 @@ public class myCipher implements CipherI{
 	
 	public static void main(String args[]) {
 		
-		String orginalString="u=mehul";
+		String orginalString="u=Katara Mehul";
 			
 		myCipher obj = new myCipher();
 		String encryptString = obj.encrypt(orginalString);
 		String decryptString = obj.decrypt(encryptString);
+		
 		System.out.println(orginalString);	
-		System.out.println(encryptString);
+		System.out.println(encryptString);		
 		System.out.println(decryptString);
 	}
 }
