@@ -16,7 +16,8 @@ public class myCipher implements CipherI{
 	
 	private SecretKeySpec secretKey;
 	private byte[] key;
-	String myKey="123";
+	String myKey="Mehul Katara";
+	
 	
 	
 	
@@ -83,7 +84,7 @@ public class myCipher implements CipherI{
 	
 	public static void main(String args[]) {
 		
-		String orginalString="u=Katara Mehul";
+		String orginalString="u=mehulkatara";
 			
 		myCipher obj = new myCipher();
 		String encryptString = obj.encrypt(orginalString);
