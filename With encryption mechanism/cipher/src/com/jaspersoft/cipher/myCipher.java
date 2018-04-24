@@ -50,7 +50,7 @@ public class myCipher implements CipherI{
 			setKey(secret);
 			Cipher cipher = Cipher.getInstance("RC4");
 			cipher.init(Cipher.DECRYPT_MODE, secretKey);
-			return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt.getBytes("UTF-8"))));
+			return new String(cipher.doFinal(Base64.getUrlDecoder().decode(strToDecrypt.getBytes("UTF-8"))));
 			
 		}
 		catch(Exception e)
@@ -69,7 +69,7 @@ public class myCipher implements CipherI{
 			Cipher cipher = Cipher.getInstance("RC4");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey);
 			
-			return Base64.getEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
+			return Base64.getUrlEncoder().encodeToString(cipher.doFinal(strToEncrypt.getBytes("UTF-8")));
 		
 			
 		}
